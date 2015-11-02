@@ -3,32 +3,32 @@ JavaScript linq methods
 
 ### Methods
 
-Name                  | Parameters                                    | Return        | Description
-----------------------|-----------------------------------------------|---------------|------------------------
-`Array.lambda`        | (predicate: string*)                          | function      | Converts linq string expression into JavaScript function. For example `"x=>x.value"` would be converted to `function (x) { return x.value; }`.
-`forEach`             | (predicate: function*)                        | void          | Executes provided function per each element in array. Return `false` or `{ stop: true }` to break iteration.
-`first`               | (predicate: function)                         | object        | Returns first matching element.
-`last`                | (predicate: function)                         | object        | Returns last matching element.
-`where`               | (predicate: function*)                        | array         | Returns new array with matching elements.
-`select`              | (predicate: function*)                        | array         | Returns new array with returned values per each element.
-`selectMany`          | (predicate: function*)                        | array         | Returns new array which contains all of the elements of returned arrays per each element. 
-`take`                | (n: integer: required)                        | array         | Returns new array with N first elements of the original array.
-`skip`                | (n: integer: required)                        | array         | Returns new array without N first elements of the original array.
-`clear`               |                                               | void          | Removes all of the array elements.
-`contains`            | (element: object*)                            | boolean       | Returns `true` if provided element is within array, `false` otherwise.
-`group`               | (predicate: function*)                        | array         | Groups array items by value, returns array of groups, where each groups is an array of element with `key` property.
-`sum`                 | (predicate: function, defaultValue: object)   | number/string | Returns sum of all selected values or default value if no elements in array.
-`max`                 | (predicate: function, defaultValue: object)   | number/string | Returns max value of all selected values or default value if no elements in array.
-`min`                 | (predicate: function, defaultValue: object)   | number/string | Returns min value of all selected values or default value if no elements in array.
-`avg`                 | (predicate: function, defaultValue: object)   | number/string | Returns average value of all selected values or default value if no elements in array.
-`distinct`            | (predicate: function)                         | array         | Returns new array with unique elements from the original array.
-`copy`                |                                               | array         | Returns a copy of the original array, same as `array.slice()`.
-`any`                 | (predicate: function)                         | boolean       | Returns `true` if an element was found in the array, `false` otherwise.
-`orderBy`             | (predicate: function*, desc: boolen)          | array         | Returns new array with elements from the original array sorted by value provided.
-`orderByDesc`         | (predicate: function*)                        | array         | Same as `array.orderBy(expression, true)`;
-`findIndex`           | (predicate: function*)                        | integer       | Returns index of matching element, -1 if no elements match the predicate.
-`removeElement`       | (element: object*)                            | void          | Removes element from array.
-`removeAt`            | (index: integer*)                             | void          | Removes element at position `index`, equals to `array.splice(index, 1)`.
+Name            | Parameters                                  | Return        | Description
+----------------|---------------------------------------------|---------------|------------------------
+`Array.lambda`  | (predicate: string*)                        | function      | Converts linq string expression into JavaScript function. For example `"x=>x.value"` would be converted to `function (x) { return x.value; }`.
+`forEach`       | (predicate: function*)                      | void          | Executes provided function per each element in array. Return `false` or `{ stop: true }` to break iteration.
+`first`         | (predicate: function)                       | object        | Returns first matching element.
+`last`          | (predicate: function)                       | object        | Returns last matching element.
+`where`         | (predicate: function*)                      | array         | Returns new array with matching elements.
+`select`        | (predicate: function*)                      | array         | Returns new array with returned values per each element.
+`selectMany`    | (predicate: function*)                      | array         | Returns new array which contains all of the elements of returned arrays per each element. 
+`take`          | (n: integer*)                               | array         | Returns new array with N first elements of the original array.
+`skip`          | (n: integer*)                               | array         | Returns new array without N first elements of the original array.
+`clear`         |                                             | void          | Removes all of the array elements.
+`contains`      | (element: object*)                          | boolean       | Returns `true` if provided element is within array, `false` otherwise.
+`group`         | (predicate: function*)                      | array         | Groups array items by value, returns array of groups, where each groups is an array of element with `key` property.
+`sum`           | (predicate: function, defaultValue: object) | number/string | Returns sum of all selected values or default value if no elements in array.
+`max`           | (predicate: function, defaultValue: object) | number/string | Returns max value of all selected values or default value if no elements in array.
+`min`           | (predicate: function, defaultValue: object) | number/string | Returns min value of all selected values or default value if no elements in array.
+`avg`           | (predicate: function, defaultValue: object) | number/string | Returns average value of all selected values or default value if no elements in array.
+`distinct`      | (predicate: function)                       | array         | Returns new array with unique elements from the original array.
+`copy`          |                                             | array         | Returns a copy of the original array, same as `array.slice()`.
+`any`           | (predicate: function)                       | boolean       | Returns `true` if an element was found in the array, `false` otherwise.
+`orderBy`       | (predicate: function*, desc: boolen)        | array         | Returns new array with elements from the original array sorted by value provided.
+`orderByDesc`   | (predicate: function*)                      | array         | Same as `array.orderBy(expression, true)`;
+`findIndex`     | (predicate: function*)                      | integer       | Returns index of matching element, -1 if no elements match the predicate.
+`removeElement` | (element: object*)                          | void          | Removes element from array.
+`removeAt`      | (index: integer*)                           | void          | Removes element at position `index`, equals to `array.splice(index, 1)`.
 
 - The parameters marked with * are required.
 - The predicate function may be passed as a function or as a string which will be converted to a function with `Array.lambda` method.
