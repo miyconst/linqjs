@@ -1,0 +1,36 @@
+{
+    "name": "linq.js",
+    "version": "0.0.1",
+    "description": "JavaScript linq extensions",
+    "main": "linq.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "test": "node_modules/.bin/mocha"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/miyconst/linqjs"
+    },
+    "keywords": [
+        "JavaScript",
+        "linq",
+        "array",
+        "extensions",
+        "prototype"
+    ],
+    "author": {
+        "name": "Konstantin Cherniavskyi",
+        "email": "const.miyang@gmail.com"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/miyconst/linqjs/issues"
+    },
+    "homepage": "https://github.com/miyconst/linqjs",
+    "devDependencies": {
+        "expect.js": "^0.3.1",
+        "mocha": "^2.1.0"
+    }
+}

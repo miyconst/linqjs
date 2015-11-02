@@ -1,0 +1,26 @@
+{
+    "name": "linq.js",
+    "description": "JavaScript linq extensions",
+    "main": "linq.js",
+    "moduleType": [ ],
+    "keywords": [
+        "JavaScript",
+        "linq",
+        "array",
+        "extensions",
+        "prototype"
+    ],
+    "authors": [
+        "Konstantin Cherniavskyi <const.miyang@gmail.com>"
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/miyconst/linqjs",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests",
+        "linqjs.sql"
+    ]
+}
