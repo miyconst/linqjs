@@ -1,0 +1,2 @@
+# linqjs
+JavaScript linq methods
