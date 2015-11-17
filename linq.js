@@ -2,7 +2,7 @@
 /*-- JavaScript linq extensions --*/
 /*-- const.miyang@gmail.com --*/
 /*-- http://www.miyconst.com/ --*/
-/*-- Verion: 0.0.1 --*/
+/*-- Verion: 0.0.2 --*/
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
 if (!Array.prototype.forEach) {

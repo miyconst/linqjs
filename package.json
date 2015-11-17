@@ -1,6 +1,6 @@
 {
     "name": "linq.js",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "JavaScript linq extensions",
     "main": "linq.js",
     "directories": {
