@@ -6,7 +6,7 @@ JavaScript linq methods
 Name            | Parameters                                  | Return        | Description
 ----------------|---------------------------------------------|---------------|------------------------
 `Array.lambda`  | (predicate: string*)                        | function      | Converts linq string expression into JavaScript function. For example `"x=>x.value"` would be converted to `function (x) { return x.value; }`.
-`forEach`       | (predicate: function*)                      | void          | Executes provided function per each element in array. Return `false` or `{ stop: true }` to break iteration.
+`forEach`       | (predicate: function*)                      | void          | https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
 `first`         | (predicate: function)                       | object        | Returns first matching element.
 `last`          | (predicate: function)                       | object        | Returns last matching element.
 `where`         | (predicate: function*)                      | array         | Returns new array with matching elements.
@@ -38,24 +38,6 @@ Name            | Parameters                                  | Return        | 
 The following array will be used in all examples:
 ```js
 var array = [{ value: 0 }, { value: 1 }, { value: 2 }, { value: 3 }, { value: 4 }, { value: 5 }, { value: 6 }, { value: 7 }, { value: 8 }, { value: 9 }];
-```
-
-#### forEach
-
-```js
-array.forEach(function (item, index) {
-	item.value++;
-
-	if (item.value > 4) {
-		return false;
-	}
-});
-
-console.log(array);
-```
-
-```js
-[{ value: 1 }, { value: 2 }, { value: 3 }, { value: 4 }, { value: 5 }, { value: 5 }, { value: 6 }, { value: 7 }, { value: 8 }, { value: 9 }]
 ```
 
 #### first
