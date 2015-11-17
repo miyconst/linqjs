@@ -13,21 +13,6 @@
             done();
         });
 
-        it("`forEach` should stop if false returned", function (done) {
-            var a = [1, 2, 3];
-
-            a.forEach(function (it, i) {
-                a[i]++;
-
-                if (a[i] == 3) {
-                    return false;
-                }
-            });
-
-            expect(a.join(",")).to.be("2,3,3");
-            done();
-        });
-
         it("`first` should return first matching element", function (done) {
             var a = [{ value: 1 }, { value: 2 }, { value: 2 }];
 

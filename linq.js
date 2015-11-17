@@ -4,6 +4,41 @@
 /*-- http://www.miyconst.com/ --*/
 /*-- Verion: 0.0.1 --*/
 
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+if (!Array.prototype.forEach) {
+    Array.prototype.forEach = function (callback, thisArg) {
+        var T, k;
+
+        if (this == null) {
+            throw new TypeError(' this is null or not defined');
+        }
+
+        var O = Object(this);
+        var len = O.length >>> 0;
+
+        if (typeof callback !== "function") {
+            throw new TypeError(callback + ' is not a function');
+        }
+
+        if (arguments.length > 1) {
+            T = thisArg;
+        }
+
+        k = 0;
+
+        while (k < len) {
+            var kValue;
+
+            if (k in O) {
+                kValue = O[k];
+                callback.call(T, kValue, k, O);
+            }
+
+            k++;
+        }
+    };
+}
+
 Array.lambda = function (s) {
     if (typeof s != "string") {
         return s;
@@ -18,26 +53,19 @@ Array.lambda = function (s) {
 
 Array.prototype.linqArray = true;
 
-Array.prototype.forEach = function (d) {
-    for (var i = 0; i < this.length; i++) {
-        var e = d(this[i], i);
-        if (e === false || (e && e.stop)) {
-            break;
-        }
-    }
-};
 Array.prototype.first = function (d) {
     var result;
 
     d = Array.lambda(d);
 
     if (d) {
-        this.forEach(function (it) {
+        for (var i = 0; i < this.length; i++) {
+            var it = this[i];
+
             if (d(it)) {
-                result = it;
-                return { stop: true };
+                return it;
             }
-        });
+        }
     } else {
         result = this[0];
     }
